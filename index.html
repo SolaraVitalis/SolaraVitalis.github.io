@@ -68,7 +68,7 @@
         }
 
         .nav-logo { display: flex; align-items: center; text-decoration: none; }
-        .nav-logo img { height: 102px; width: auto; }
+        .nav-logo img { height: 60px; width: auto; }
 
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
@@ -120,7 +120,7 @@
         }
 
         .hero-logo {
-            width: 400px; height: auto;
+            width: min(400px, 60vw); height: auto;
             margin-bottom: 0.3rem;
             opacity: 0; transform: translateY(20px);
             animation: fadeUp 1s ease forwards 0.2s;
@@ -188,7 +188,7 @@
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 1.8rem; margin-top: 2.5rem;
         }
 
@@ -353,10 +353,10 @@
         }
 
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.5rem; }
-            .nav-logo img { height: 34px; }
+            nav { padding: 0.8rem 1.2rem; }
+            .nav-logo img { height: 38px; }
             .nav-toggle { display: block; }
-
+        
             .nav-links {
                 display: none;
                 position: absolute; top: 100%; left: 0; right: 0;
@@ -366,13 +366,17 @@
                 padding: 1.5rem 2rem; gap: 1.2rem;
                 border-bottom: 1px solid var(--sand);
             }
-
+        
             .nav-links.open { display: flex; }
-            .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
-            .hero-logo { width: 100px; }
+            .hero { padding: 6rem 1.5rem 3rem; min-height: auto; }
+            .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+            .hero-logo { width: min(200px, 50vw); }
+            .hero-sub { font-size: 1rem; }
             .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-            section { padding: 4.5rem 1.5rem; }
-        }
+            section { padding: 3.5rem 1.2rem; }
+            .section-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+            .footer-logo { height: 60px; }
+        }       
     </style>
 </head>
 <body>
